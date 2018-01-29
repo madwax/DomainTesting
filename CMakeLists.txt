@@ -32,8 +32,6 @@ if( DEFINED DomainTestingPlatform )
 
 else()
 
-	message( "Working out what platform we have" )
-
 	set( DomainTestingSubPlatform "" )
 
 	# need to work out what we have.

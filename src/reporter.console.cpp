@@ -84,7 +84,7 @@ void ReporterConsole::InfoBeginGroup( unsigned int number, const char *groupName
 	char x[ 255 ];
 
 	memset( x, 0, 255 );
-	sprintf( x, "Group number:%d name:'%s'\n", number, groupName );
+	snprintf( x, 254, "Group number:%d name:'%s'\n", number, groupName );
 
 	if( s_RunningUnderDebugger == true )
 	{
@@ -107,7 +107,7 @@ void ReporterConsole::InfoTest( unsigned int number, const char *testName )
 	char x[ 255 ];
 
 	memset( x, 0, 255 );
-	sprintf( x, "  Test %d - '%s'\n", number, testName ); 
+	snprintf( x, 254, "  Test %d - '%s'\n", number, testName ); 
 
 	if( s_RunningUnderDebugger == true )
 	{
@@ -141,9 +141,9 @@ void ReporterConsole::InfoFinishGroup( const char *groupName )
 
 void ReporterConsole::TestBeginGroup( const char *groupName )
 {
-	char numb[ 256 ];
-	memset( numb, 0, 256 );
-	sprintf( numb, "Start Group '%s'\n", groupName );
+	char numb[ 255 ];
+	memset( numb, 0, 255 );
+	snprintf( numb, 254, "Start Group '%s'\n", groupName );
 
 	if( s_RunningUnderDebugger == true )
 	{
@@ -164,9 +164,9 @@ void ReporterConsole::TestBeginGroup( const char *groupName )
 
 void ReporterConsole::TestPass( unsigned int number, const char *testName )
 {
-	char numb[ 256 ];
-	memset( numb, 0, 256 );
-	sprintf( numb, "%d '%s'\n", number, testName );
+	char numb[ 255 ];
+	memset( numb, 0, 255 );
+	snprintf( numb, 254, "%d '%s'\n", number, testName );
 
 	if( s_RunningUnderDebugger == true )
 	{
@@ -194,9 +194,9 @@ void ReporterConsole::TestPass( unsigned int number, const char *testName )
 
 void ReporterConsole::TestFailed( unsigned int number, const char *testName, unsigned int checkPointFailedAt )
 {
-	char numb[ 256 ];
-	memset( numb, 0, 256 );
-	sprintf( numb, "@Checkpoint:%d %d '%s'\n", checkPointFailedAt, number, testName );
+	char numb[ 255 ];
+	memset( numb, 0, 255 );
+	snprintf( numb, 254, "@Checkpoint:%d %d '%s'\n", checkPointFailedAt, number, testName );
 
 	if( s_RunningUnderDebugger == true )
 	{
